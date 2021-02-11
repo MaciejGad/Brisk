@@ -7,7 +7,12 @@
 //
 
 import Foundation
+#if os(Linux)
+import FoundationNetworking
+import Crypto
+#else
 import CryptoKit
+#endif
 
 extension Data {
     func md5() -> String {

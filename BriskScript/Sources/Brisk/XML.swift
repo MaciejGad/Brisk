@@ -8,6 +8,8 @@
 
 import Foundation
 
+#if os(macOS)
+
 enum XML {
     class XMLNode {
         let tag: String
@@ -104,3 +106,5 @@ func parseXML(from file: String) -> XML.XMLNode? {
     let dom = XML.MicroDOM(data: data)
     return dom.parse()
 }
+
+#endif
